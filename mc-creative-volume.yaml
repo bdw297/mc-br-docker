@@ -1,0 +1,16 @@
+services:
+ mc-br-creative:
+  image: itzg/minecraft-bedrock-server
+  container_name: mc-br-creative
+  ports:
+   - 5456:19132/udp
+  environment:
+    EULA: "TRUE"
+    GAMEMODE: creative
+  volumes:
+    - mc-br-creative:/data
+  restart: unless-stopped
+
+volumes:
+  mc-br-creative:
+    external: true
