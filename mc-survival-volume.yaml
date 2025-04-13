@@ -1,0 +1,16 @@
+services:
+  mc-br-survival:
+    image: itzg/minecraft-bedrock-server
+    container_name: mc-br-survival
+    ports:
+      - 19137:19132/udp
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: survival
+    volumes:
+      - mc-br-survival:/data
+    restart: unless-stopped
+
+volumes:
+  mc-br-survival:
+    external: true
